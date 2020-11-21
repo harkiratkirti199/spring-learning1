@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!-- <bean/> definitions here -->
+	<bean name="homeAddress" class="io.pragra.learning.HomeAddress">
+		<constructor-arg name="streetAddress" value="200"></constructor-arg>
+		<constructor-arg name="streetName" value="200"></constructor-arg>
+		<constructor-arg name="city" value="Waterloo"></constructor-arg>
+		<constructor-arg name="country" value="Canada"></constructor-arg>
+	</bean>
+	
+	<bean name="person" class="io.pragra.learning.Person">
+		<constructor-arg name="name" value="Harkirat"></constructor-arg>
+		<constructor-arg name="age" value="27"></constructor-arg>
+		<constructor-arg name="address" ref="homeAddress"></constructor-arg>
+		<constructor-arg name="hobbies" >
+		<list>
+		<value>Watching TV</value>
+		<value>Doing coding</value>
+		</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean name="officeAddress" class="io.pragra.learning.OfficeAddress">
+	<property name="officeName" value="Pragra"></property>
+	</bean>
+	
+	
+</beans>
